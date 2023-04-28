@@ -1,0 +1,11 @@
+[Unit]
+Description=Get number of updates in the system, and saved them to local file
+
+[Service]
+ExecStart=/home/elohim/.config/i3status/check_updates.sh /tmp/updates_log
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+
+

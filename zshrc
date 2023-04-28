@@ -20,6 +20,7 @@ bindkey -v
 ZSH_PLUGIN_DIR=/usr/share/zsh/plugins
 source $ZSH_PLUGIN_DIR/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $ZSH_PLUGIN_DIR/zsh-autosuggestions/zsh-autosuggestions.zsh
+source <(kubectl completion zsh)
 eval "$(starship init zsh)"
 export EDITOR=nvim
 #ssh-agent script
@@ -35,3 +36,6 @@ else
     eval `ssh-agent | tee ~/.ssh/agent.env`
     ssh-add
 fi
+alias ls="ls --color"
+alias grep="grep --color"
+alias k="kubectl"
