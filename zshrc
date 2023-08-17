@@ -17,12 +17,19 @@ setopt autocd extendedglob
 bindkey -v
 # End of lines configured by zsh-newuser-install
 #
-ZSH_PLUGIN_DIR=/usr/share/zsh/plugins
+ZSH_PLUGIN_DIR=~/.config/zsh/plugins
 source $ZSH_PLUGIN_DIR/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $ZSH_PLUGIN_DIR/zsh-autosuggestions/zsh-autosuggestions.zsh
 source <(kubectl completion zsh)
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "/usr/share/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 eval "$(starship init zsh)"
+export TERM=xterm
 export EDITOR=nvim
+export SUDO_EDITOR=nvim
+export SYSTEMD_EDITOR=nvim
+export XDG_CONFIG_HOME="$HOME/.config"
+export SERVER_MAC="48:21:0b:51:bc:eb"
 #ssh-agent script
 if [ -f ~/.ssh/agent.env ] ; then
     . ~/.ssh/agent.env > /dev/null
@@ -39,3 +46,10 @@ fi
 alias ls="ls --color"
 alias grep="grep --color"
 alias k="kubectl"
+
+
+########PATH#######
+export PATH="$HOME/.local/bin:/var/lib/snapd/snap/bin:$PATH"
+
+
+neofetch
