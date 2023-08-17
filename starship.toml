@@ -1,6 +1,7 @@
 format = """
 [](#3B4252)\
 $username\
+$hostname\
 [](bg:#434C5E fg:#3B4252)\
 $directory\
 [](fg:#434C5E bg:#4C566A)\
@@ -21,7 +22,9 @@ $rust\
 $docker_context\
 [](fg:#06969A bg:#33658A)\
 $time\
-[ ](fg:#33658A)\
+[ ](fg:#33658A)
+[└─>](bold fg:#33658A)\
+$os\ 
 """
 command_timeout = 5000
 # Disable the blank line at the start of the prompt
@@ -33,6 +36,11 @@ show_always = true
 style_user = "bg:#3B4252"
 style_root = "bg:#3B4252"
 format = '[$user ]($style)'
+[hostname]
+ssh_only = false
+ssh_symbol='󰣀 '
+format = '[$ssh_symbol](bold blue)[󰹻 $hostname](bold fg:#06969A bg:#3B4252)'
+
 
 [directory]
 style = "bg:#434C5E"
@@ -123,4 +131,12 @@ disabled = false
 time_format = "%R" # Hour:Minute Format
 style = "bg:#33658A"
 format = '[ $time ]($style)'
+
+[os]
+disabled = false
+style = "fg:#06969A"
+format = '[ $symbol ]($style)'
+
+[os.symbols]
+Arch = "󰣇 "
 
