@@ -46,10 +46,14 @@ fi
 alias ls="ls --color"
 alias grep="grep --color"
 alias k="kubectl"
+alias gin="git init"
+alias gic="git commit"
+alias gad="git add"
+alias gpo="git push origin"
 
 
 ########PATH#######
-export PATH="$HOME/.local/bin:/var/lib/snapd/snap/bin:$PATH"
+export PATH="$HOME/go/bin:$HOME/.local/bin:/var/lib/snapd/snap/bin:$PATH"
 
 
 neofetch
