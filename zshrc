@@ -17,7 +17,8 @@ setopt autocd extendedglob
 bindkey -v
 # End of lines configured by zsh-newuser-install
 #
-ZSH_PLUGIN_DIR=~/.config/zsh/plugins
+ZSH_PLUGIN_DIR=~/.nix-profile/share
+source $ZSH_PLUGIN_DIR/fzf-tab/fzf-tab.plugin.zsh
 source $ZSH_PLUGIN_DIR/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $ZSH_PLUGIN_DIR/zsh-autosuggestions/zsh-autosuggestions.zsh
 source <(kubectl completion zsh)
@@ -31,6 +32,7 @@ export SYSTEMD_EDITOR=nvim
 export XDG_CONFIG_HOME="$HOME/.config"
 export SERVER_MAC="48:21:0b:51:bc:eb"
 #ssh-agent script
+fpath=($ZSH_PLUGIN_DIR/zsh/site-functions $fpath)
 if [ -f ~/.ssh/agent.env ] ; then
     . ~/.ssh/agent.env > /dev/null
     if ! kill -0 $SSH_AGENT_PID > /dev/null 2>&1; then
