@@ -24,9 +24,14 @@ $docker_context\
 $time\
 [ ](fg:#33658A)
 $os(bold fg:#33658A)\ 
-[󰥭 ](fg:#06969A)\
+[$character ](fg:#06969A)\
 """
 command_timeout = 5000
+# ~/.config/starship.toml
+
+# A continuation prompt that displays two filled in arrows
+continuation_prompt = '▶▶ '
+
 # Disable the blank line at the start of the prompt
 # add_newline = false
 
@@ -41,6 +46,9 @@ ssh_only = false
 ssh_symbol='󰣀 '
 format = '[$ssh_symbol](bold blue)[󰹻 $hostname](bold fg:#06969A bg:#3B4252)'
 
+[character]
+success_symbol = '[➜](bold green) '
+error_symbol = '[➜](bold red) '
 
 [directory]
 style = "bg:#434C5E"
@@ -139,4 +147,4 @@ format = '[ $symbol ]($style)'
 
 [os.symbols]
 Arch = "󰣇"
-
+Macos = ""
