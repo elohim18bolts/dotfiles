@@ -221,17 +221,17 @@ function get(category, add_space)
 end
 
 local icons = {
-		diagnostics = get("diagnostics"),
-		documents = get("documents"),
-		git = get("git"),
-		ui = get("ui"),
-	}
+	diagnostics = get("diagnostics"),
+	documents = get("documents"),
+	git = get("git"),
+	ui = get("ui"),
+}
 
 
 require('nvim-tree').setup({
 	disable_netrw = false,
 	hijack_netrw = true,
-        renderer = {
+	renderer = {
 		add_trailing = false,
 		group_empty = true,
 		highlight_git = true,
@@ -289,26 +289,26 @@ require('nvim-tree').setup({
 		},
 	},
 	actions = {
-			use_system_clipboard = true,
-			change_dir = {
+		use_system_clipboard = true,
+		change_dir = {
+			enable = true,
+			global = false,
+		},
+		open_file = {
+			quit_on_open = true,
+			resize_window = false,
+			window_picker = {
 				enable = true,
-				global = false,
-			},
-			open_file = {
-				quit_on_open = true,
-				resize_window = false,
-				window_picker = {
-					enable = true,
-					chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890",
-					exclude = {
-						filetype = { "notify", "qf", "diff", "fugitive", "fugitiveblame" },
-						buftype = { "terminal", "help" },
-					},
+				chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890",
+				exclude = {
+					filetype = { "notify", "qf", "diff", "fugitive", "fugitiveblame" },
+					buftype = { "terminal", "help" },
 				},
 			},
-			remove_file = {
-				close_window = true,
-			},
 		},
+		remove_file = {
+			close_window = true,
+		},
+	},
 
 })
