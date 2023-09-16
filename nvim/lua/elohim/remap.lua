@@ -11,3 +11,5 @@ vim.keymap.set('n', '<leader>af', function()
 	print("ALE fixed document")
 end
 )
+vim.keymap.set('n', "<leader>t", vim.cmd.FloatermToggle)
+vim.keymap.set('t', "<leader>t", vim.cmd.FloatermToggle)
