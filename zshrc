@@ -58,4 +58,4 @@ alias gpo="git push origin"
 export PATH="$HOME/go/bin:$HOME/.local/bin:/var/lib/snapd/snap/bin:$PATH"
 
 
-neofetch
+#neofetch
