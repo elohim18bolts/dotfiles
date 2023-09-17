@@ -78,6 +78,9 @@ bindsym $mod+semicolon exec emoji-picker
 # start dmenu (a program launcher)
 bindsym $mod+d exec --no-startup-id dmenu_run
 bindsym $mod+x exec --no-startup-id j4-dmenu-desktop
+bindsym $mod+p exec --no-startup-id ~/.config/rofi/launchers/type-1/launcher.sh
+bindsym $mod+BackSpace exec --no-startup-id ~/.config/rofi/powermenu/type-2/powermenu.sh
+
 # A more modern dmenu replacement is rofi:
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a
@@ -139,10 +142,10 @@ bindsym $mod+a focus parent
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1 󰶀 "
-set $ws2 "2  "
-set $ws3 "3  "
-set $ws4 "4  "
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
 set $ws5 "5"
 set $ws6 "6"
 set $ws7 "7"
@@ -220,8 +223,7 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# You can use these variables anywhere in the i3 configuration file.
-
+## You can use these variables anywhere in the i3 configuration file.
 set $base00 #193549
 set $base01 #0d3a58
 set $base02 #0050a4
@@ -253,7 +255,7 @@ colors {
     }
     padding 1px 0
     position top
-        status_command i3status -c ~/.config/i3status/i3status.conf
+       status_command i3status -c ~/.config/i3status/i3status.conf
 }
 
 # Basic color configuration using the Base16 variables for windows and borders.
