@@ -56,6 +56,8 @@ alias gpo="git push origin"
 
 ########PATH#######
 export PATH="$HOME/go/bin:$HOME/.local/bin:/var/lib/snapd/snap/bin:$PATH"
+if [ -e $HOME/.nix-profile/etc/profile.d/nix.sh ]; then source $HOME/.nix-profile/etc/profile.d/nix.sh; fi
+
 
 
 #neofetch
