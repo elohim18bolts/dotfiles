@@ -19,12 +19,12 @@ cmp.setup({
 	sources = cmp.config.sources(
 		{
 			{ name = 'nvim_lsp' },
-			{ name = 'vsnip' }
-		},
-		{
-			{ name = 'buffer' }
+			{ name = 'vsnip' },
+			{ name = 'buffer' },
+			{ name = 'path' },
 		}
 	)
+
 })
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
