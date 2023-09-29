@@ -1,11 +1,32 @@
 -- This file can be loaded by calling `lua require('plugins')` from your init.vim
+local packer_install_path = vim.fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
+if vim.fn.empty(vim.fn.glob(packer_install_path)) > 0 then
+	bootstrap_packer = vim.fn.system({
+		"git",
+		"clone",
+		"--depth",
+		"1",
+		"https://github.com/wbthomason/packer.nvim",
+		packer_install_path,
+	})
+	print("Installing packer... Close and reopen neovim")
+	vim.cmd([[packadd packer.nvim]])
+end
+-- Use a protected call so we don't error out on first use
+local status_ok, packer = pcall(require, "packer")
+if not status_ok then
+	return
+end
 
 -- Only required if you have packer configured as `opt`
-vim.cmd [[packadd packer.nvim]]
+-- vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
 	-- Packer can manage itself
 	use 'wbthomason/packer.nvim'
+	if bootstrap_packer then
+		require("packer").sync()
+	end
 	use {
 		'nvim-telescope/telescope.nvim', tag = '0.1.2',
 		-- or                            , branch = '0.1.x',
