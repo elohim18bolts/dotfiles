@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+wallpapers=$(ls $HOME/.config/wallpapers/*.jpg)
+feh --no-fehbg --bg-fill $wallpapers
