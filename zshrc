@@ -38,12 +38,12 @@ if [ -f ~/.ssh/agent.env ] ; then
     if ! kill -0 $SSH_AGENT_PID > /dev/null 2>&1; then
         echo "Stale agent file found. Spawning a new agent. "
         eval `ssh-agent | tee ~/.ssh/agent.env`
-        ssh-add
+	ssh-add $(find ~/.ssh -type f \( ! -name '*.*' -and ! -name 'known_hosts' -and ! -name 'config' \))
     fi
 else
     echo "Starting ssh-agent"
     eval `ssh-agent | tee ~/.ssh/agent.env`
-    ssh-add
+    ssh-add $(find ~/.ssh -type f \( ! -name '*.*' -and ! -name 'known_hosts' -and ! -name 'config' \))
 fi
 alias ls="ls --color"
 alias grep="grep --color"
