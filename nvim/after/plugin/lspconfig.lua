@@ -18,7 +18,19 @@ lspconfig.lua_ls.setup {
 		},
 	},
 }
-lspconfig.yamlls.setup {}
+lspconfig.yamlls.setup {
+	on_attach = on_attach,
+	settings = {
+		yaml = {
+			schemas = {
+				["https://json.schemastore.org/chart.json"] = "templates/**/*",
+				["https://json.schemastore.org/chart.json"] = "/*",
+				["https://raw.githubusercontent.com/quantumblacklabs/kedro/develop/static/jsonschema/kedro-catalog-0.17.json"] = "conf/**/*catalog*",
+				["https://json.schemastore.org/github-workflow.json"] = "/.github/workflows/*"
+			}
+		}
+	}
+}
 lspconfig.rnix.setup {}
 -------------------------Ruby Setup ----------------------------------
 _timers = {}
