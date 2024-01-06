@@ -90,8 +90,12 @@ return require('packer').startup(function(use)
 		use 'voldikss/vim-floaterm'
 
 	}
-	use { 'nvim-orgmode/orgmode', config = function()
-		require('orgmode').setup {}
-	end
+	use('nvim-orgmode/orgmode')
+	use {
+		"folke/which-key.nvim",
+		config = function()
+			vim.o.timeout = true
+			vim.o.timeoutlen = 500
+		end
 	}
 end)
