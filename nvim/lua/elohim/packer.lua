@@ -32,7 +32,9 @@ return require('packer').startup(function(use)
 		-- or                            , branch = '0.1.x',
 		requires = { { 'nvim-lua/plenary.nvim' } }
 	}
-	use 'freddiehaddad/feline.nvim'
+	use('nvim-lualine/lualine.nvim')
+	use('kdheepak/tabline.nvim')
+	--use 'freddiehaddad/feline.nvim'
 	use {
 		'catppuccin/nvim',
 		as = "catppuccin",
