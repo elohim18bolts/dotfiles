@@ -35,4 +35,17 @@ wk.register({
 		},
 		["1"] = "which_key_ignore", -- special label to hide it in the popup
 	},
+	g = {
+		name = "Git",
+		g = { "<cmd>Git<cr>", "Git Management" },
+		p = { "<cmd>Git push origin<cr>", "Push To Remote Repo" },
+	},
+	b = {
+		name = "Buffer",
+		b = { "<cmd>Telescope buffers<cr>", "Show Opened Buffers" },
+		s = { "<cmd>Telescope current_buffer_fuzzy_find<cr>", "Find In Current Buffer" },
+
+	},
+
+
 }, { prefix = "<leader>" })
