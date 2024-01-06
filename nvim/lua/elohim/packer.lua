@@ -101,4 +101,13 @@ return require('packer').startup(function(use)
 		end
 	}
 	use('lewis6991/gitsigns.nvim')
+	use {
+		'hiphish/rainbow-delimiters.nvim',
+		requires = { 'nvim-treesitter/nvim-treesitter' },
+		config = function() require('rainbow-delimiters.setup').setup() end
+
+	}
+	use { 'lukas-reineke/indent-blankline.nvim',
+		config = function() require("ibl").setup() end
+	}
 end)
