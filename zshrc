@@ -32,6 +32,7 @@ export SYSTEMD_EDITOR=nvim
 export XDG_CONFIG_HOME="$HOME/.config"
 export SERVER_MAC="48:21:0b:51:bc:eb"
 #ssh-agent script
+fpath=(~/Documents/dotfiles/zsh_completions $fpath)
 fpath=($ZSH_PLUGIN_DIR/zsh/site-functions $fpath)
 if [ -f ~/.ssh/agent.env ] ; then
     . ~/.ssh/agent.env > /dev/null
