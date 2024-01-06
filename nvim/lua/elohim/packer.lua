@@ -98,4 +98,5 @@ return require('packer').startup(function(use)
 			vim.o.timeoutlen = 500
 		end
 	}
+	use('lewis6991/gitsigns.nvim')
 end)
