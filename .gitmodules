@@ -1,3 +1,6 @@
 [submodule "rofi"]
 	path = rofi
 	url = https://github.com/adi1090x/rofi.git
+[submodule "scripts/gpu-passthrough/gpu-passthrough"]
+	path = scripts/gpu-passthrough/gpu-passthrough
+	url = https://github.com/QaidVoid/Complete-Single-GPU-Passthrough
