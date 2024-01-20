@@ -31,21 +31,10 @@ export SUDO_EDITOR=nvim
 export SYSTEMD_EDITOR=nvim
 export XDG_CONFIG_HOME="$HOME/.config"
 export SERVER_MAC="48:21:0b:51:bc:eb"
-#ssh-agent script
 fpath=(~/Documents/dotfiles/zsh_completions $fpath)
 fpath=($ZSH_PLUGIN_DIR/zsh/site-functions $fpath)
-if [ -f ~/.ssh/agent.env ] ; then
-    . ~/.ssh/agent.env > /dev/null
-    if ! kill -0 $SSH_AGENT_PID > /dev/null 2>&1; then
-        echo "Stale agent file found. Spawning a new agent. "
-        eval `ssh-agent | tee ~/.ssh/agent.env`
-	ssh-add $(find ~/.ssh -type f \( ! -name '*.*' -and ! -name 'known_hosts' -and ! -name 'config' \))
-    fi
-else
-    echo "Starting ssh-agent"
-    eval `ssh-agent | tee ~/.ssh/agent.env`
-    ssh-add $(find ~/.ssh -type f \( ! -name '*.*' -and ! -name 'known_hosts' -and ! -name 'config' \))
-fi
+#ssh-agent config
+eval $(keychain --eval --quiet ${$(find ~/.ssh -iname "*.pub")%.pub})
 alias ls="ls --color"
 alias grep="grep --color"
 alias k="kubectl"
