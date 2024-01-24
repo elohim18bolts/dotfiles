@@ -32,6 +32,7 @@ lspconfig.yamlls.setup {
 	}
 }
 lspconfig.rnix.setup {}
+lspconfig.terraformls.setup {}
 -------------------------Ruby Setup ----------------------------------
 _timers = {}
 local function setup_diagnostics(client, buffer)
@@ -86,7 +87,9 @@ lspconfig.rust_analyzer.setup {
 		['rust-analyzer'] = {},
 	},
 }
+
 vim.api.nvim_create_autocmd('BufWritePre', {
+--	pattern = { "*.hcl","*.tf", "*.tfvars" },
 	buffer = buffer,
 	callback = function()
 		vim.lsp.buf.format { async = false }
