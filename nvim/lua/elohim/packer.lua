@@ -88,10 +88,9 @@ return require('packer').startup(function(use)
 		end
 
 	}
-	use {
-		use 'voldikss/vim-floaterm'
+	use('voldikss/vim-floaterm')
 
-	}
+
 	use('nvim-orgmode/orgmode')
 	use {
 		"folke/which-key.nvim",
@@ -110,4 +109,5 @@ return require('packer').startup(function(use)
 	use { 'lukas-reineke/indent-blankline.nvim',
 		config = function() require("ibl").setup() end
 	}
+	use('edluffy/hologram.nvim')
 end)
