@@ -110,4 +110,6 @@ return require('packer').startup(function(use)
 		config = function() require("ibl").setup() end
 	}
 	use('edluffy/hologram.nvim')
+	use 'ray-x/go.nvim'
+	use 'ray-x/guihua.lua' -- recommended if need floating window support
 end)
