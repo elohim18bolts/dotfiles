@@ -46,6 +46,19 @@ wk.register({
 		s = { "<cmd>Telescope current_buffer_fuzzy_find<cr>", "Find In Current Buffer" },
 
 	},
+	w = {
+		name = "Panels",
+		v = { "<cmd>vsplit<cr>", "Split Window Vertical" },
+		z = { "<cmd>split<cr>", "Split Window Horizontal" },
+	},
+	t = {
+		name = "Terminal Or Tabs",
+		t    = { "<cmd>FloatermToggle<cr>", "Toggle Floating Terminal" },
+		n    = { "<cmd>TablineBufferNext<cr>", "Next Tab" },
+		p    = { "<cmd>TablineBufferPrevious<cr>", "Previous Tab" },
+		h    = { "<cmd>TablineToggleShowAllBuffers<cr>", "Toggle Show All Tabs" },
+
+	},
 
 
 }, { prefix = "<leader>" })
