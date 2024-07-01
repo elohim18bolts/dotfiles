@@ -75,7 +75,7 @@ local function setup_diagnostics(client, buffer)
 	})
 end
 
-require("lspconfig").ruby_ls.setup({
+require("lspconfig").ruby_lsp.setup({
 	on_attach = function(client, buffer)
 		setup_diagnostics(client, buffer)
 	end,
@@ -89,7 +89,7 @@ lspconfig.rust_analyzer.setup {
 }
 
 vim.api.nvim_create_autocmd('BufWritePre', {
---	pattern = { "*.hcl","*.tf", "*.tfvars" },
+	--	pattern = { "*.hcl","*.tf", "*.tfvars" },
 	buffer = buffer,
 	callback = function()
 		vim.lsp.buf.format { async = false }

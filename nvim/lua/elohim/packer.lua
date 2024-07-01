@@ -80,14 +80,16 @@ return require('packer').startup(function(use)
 
 	}
 	use 'LnL7/vim-nix'
-	use {
-		'nvim-tree/nvim-tree.lua',
-		requires = { { 'nvim-tree/nvim-web-devicons' } },
-		config = function()
-			vim.opt.termguicolors = true
-		end
+	use 'nvim-tree/nvim-tree.lua'
+	--use {
+	--	'nvim-tree/nvim-tree.lua',
+	--	requires = { { 'nvim-tree/nvim-web-devicons' } },
+	--	config = function()
+	--		vim.opt.termguicolors = true
+	--	end
 
-	}
+	--}
+	use("stevearc/oil.nvim")
 	use('voldikss/vim-floaterm')
 
 
