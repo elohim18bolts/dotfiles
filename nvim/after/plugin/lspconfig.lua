@@ -31,7 +31,7 @@ lspconfig.yamlls.setup {
 		}
 	}
 }
-lspconfig.rnix.setup {}
+lspconfig.nil_ls.setup {}
 lspconfig.terraformls.setup {}
 -------------------------Ruby Setup ----------------------------------
 _timers = {}
