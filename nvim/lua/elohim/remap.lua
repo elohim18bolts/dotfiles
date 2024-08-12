@@ -1,7 +1,7 @@
 vim.keymap.set("n", "<Space>", "<Nop>", { silent = true, remap = false })
 vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>pv", vim.cmd.NvimTreeToggle)
-vim.keymap.set("n", "<leader>pe", ":Oil --float " .. vim.loop.cwd())
+-- vim.keymap.set("n", "<leader>pe", ":Oil --float " .. vim.loop.cwd())
 vim.keymap.set("i", "jk", "<ESC>")
 vim.keymap.set("n", "<leader>w", "<C-w>")
 vim.keymap.set("n", "<leader>fs", ":w<CR>")
