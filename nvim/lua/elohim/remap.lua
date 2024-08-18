@@ -14,7 +14,7 @@ vim.keymap.set('n', '<leader>af', function()
 end
 )
 -- vim.keymap.set('n', "<leader>t", vim.cmd.FloatermToggle)
-vim.keymap.set('t', "<leader>t", vim.cmd.FloatermToggle)
+vim.keymap.set('t', "<leader>x", vim.cmd.FloatermToggle)
 -- vim.keymap.set('n', "<leader>tn", vim.cmd.TablineBufferNext)
 -- vim.keymap.set('n', "<leader>tp", vim.cmd.TablineBufferPrevious)
 -- vim.keymap.set('n', "<leader>th", vim.cmd.TablineToggleShowAllBuffers)
