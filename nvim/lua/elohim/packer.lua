@@ -28,7 +28,7 @@ return require("packer").startup(function(use)
 		require("packer").sync()
 	end
 	use {
-		"nvim-telescope/telescope.nvim', tag = '0.1.2",
+		"nvim-telescope/telescope.nvim",
 		-- or                            , branch = "0.1.x",
 		requires = { { "nvim-lua/plenary.nvim" } }
 	}
@@ -50,7 +50,12 @@ return require("packer").startup(function(use)
 	--		end
 	--	})
 	use("neovim/nvim-lspconfig")
-	use { "nvim-treesitter/nvim-treesitter', run = ':TSUpdate" }
+	use { 'nvim-treesitter/nvim-treesitter',
+		run = function()
+			local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
+			ts_update()
+		end,
+	}
 	use("ThePrimeagen/harpoon")
 	use("mbbill/undotree")
 	use("tpope/vim-fugitive")
