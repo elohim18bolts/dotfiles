@@ -55,8 +55,8 @@ cmd open &{{
 
 # move current file or selected files to trash folder
 # (also see 'man mv' for backup/overwrite options)
-cmd trash %set -f; mv $fx ~/.trash
-map d trash
+#cmd trash %set -f; mv $fx ~/.trash
+#map d trash
 
 # define a custom 'delete' command
 cmd delete ${{
@@ -64,12 +64,33 @@ cmd delete ${{
     printf "$fx\n"
     printf "delete?[y/n]"
     read ans
-    [ "$ans" = "y" ] && rm -rf $fx
+    [ "$ans" = "y" ] && trash-put $fx
 }}
 
 # use '<delete>' key for either 'trash' or 'delete' command
 # map <delete> trash
 map <backspace2> delete
+map d delete
+
+cmd append ${{
+    set -f
+    printf "Insert file name or directory path: "
+    read ans
+    if [[ $ans == *"/"* ]]; then
+    #get basename
+       filename="${ans##*/}"
+       dirpath="${ans%/*}"
+       #echo $dirpath
+       mkdir -p $dirpath
+       touch "$dirpath/$filename"
+       #echo "$dirpath/$filename"
+    elif [[ -z "$ans" ]]; then
+       echo "Empty name"
+    else
+       touch "$ans"
+    fi
+}}
+map a append
 
 # extract the current file with the right command
 # (xkcd link: https://xkcd.com/1168/)
